@@ -150,6 +150,19 @@ export const constantRoutes = [
   },
 
   {
+    path: '/',
+    component: Layout,
+    redirect: '/user_management',
+    children: [{
+      path: 'user',
+      name: 'User',
+      component: () => import('@/views/user_management/index'),
+      meta: { title: '用户管理', icon: 'user' }
+    }]
+  },
+  //路由器增加挂起
+
+  {
     path: 'external-link',
     component: Layout,
     children: [
